@@ -31,10 +31,11 @@ EXAMPLES = '''
 
 import datetime
 import json
+import ansible.module_utils.basic as amb
 
 
 def main():
-    module = AnsibleModule(
+    module = amb.AnsibleModule(
         argument_spec=dict(
             dest=dict(default='README.md'),
             template=dict(required=True),
@@ -124,6 +125,5 @@ def main():
         module.fail_json(msg=exc)
 
 
-from ansible.module_utils.basic import *
 if __name__ == '__main__':
     main()
