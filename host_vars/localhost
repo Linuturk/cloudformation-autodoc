@@ -1,4 +1,14 @@
 ExampleTemplates:
-  - "AutoScalingMultiAZWithNotifications.template"
-  - "AutoScalingScheduledAction.template"
-  - "AutoScalingRollingUpdates.template"
+  - AutoScalingMultiAZWithNotifications.template
+  - AutoScalingScheduledAction.template
+  - AutoScalingRollingUpdates.template
+  - DynamoDB_Table.template
+  - DynamoDB_Secondary_Indexes.template
+  - EC2InstanceWithSecurityGroupSample.template
+  - EIP_With_Association.template
+  - EC2_Instance_With_Ephemeral_Drives.template
+  - ElastiCache.template
+  - ElastiCache_Redis.template
+  - ElasticBeanstalk_Simple.template
+  - ElasticBeanstalk_Nodejs_Sample.template
+  - ElasticBeanstalk_in_VPC.template
