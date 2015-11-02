@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  connection: local
+  tasks:
+
+    - name: Download latest example templates
+      get_url: url=https://s3-us-west-2.amazonaws.com/cloudformation-templates-us-west-2/{{ item }} dest=templates/
+      with_items: ExampleTemplates
+
+    - name: Document Templates
+      cloudformation_autodoc: template=templates/{{ item }} dest=templates/{{ item }}.md
+      with_items: ExampleTemplates

@@ -1,0 +1,4 @@
+ExampleTemplates:
+  - "AutoScalingMultiAZWithNotifications.template"
+  - "AutoScalingScheduledAction.template"
+  - "AutoScalingRollingUpdates.template"
