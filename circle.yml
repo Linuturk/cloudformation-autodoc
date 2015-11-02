@@ -1,3 +1,4 @@
 test:
   override:
     - flake8 library/*
+    - ansible-playbook site.yml -v
