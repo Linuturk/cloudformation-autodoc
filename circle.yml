@@ -1,4 +1,4 @@
 test:
   override:
-    - flake8 library/*
+    - flake8 --ignore=F403 library/*
     - ansible-playbook site.yml -v
