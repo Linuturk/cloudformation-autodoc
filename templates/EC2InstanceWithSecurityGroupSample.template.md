@@ -1,10 +1,10 @@
 ##Description
-AWS CloudFormation Sample Template AutoScalingRollingUpdates: Create a load balanced, Auto Scaled sample website. This example creates an Auto Scaling group behind a load balancer with a simple health check. The AutoScaling launch configuration includes an update policy that will keep 2 instances running while doing an autoscaling rolling upgrade. **WARNING** This template creates one or more Amazon EC2  instances and an Elastic Load Balancer. You will be billed for the AWS resources used if you create a stack from this template.
+AWS CloudFormation Sample Template EC2InstanceWithSecurityGroupSample: Create an Amazon EC2 instance running the Amazon Linux AMI. The AMI is chosen based on the region in which the stack is run. This example creates an EC2 security group for the instance to give you SSH access. **WARNING** This template creates an Amazon EC2 instance. You will be billed for the AWS resources used if you create a stack from this template.
 ##Parameters
  * **InstanceType** - WebServer EC2 instance type
   * Default: `m1.small`
   * Constraint: `must be a valid EC2 instance type.`
- * **KeyName** - Name of an existing EC2 KeyPair to enable SSH access to the instances
+ * **KeyName** - Name of an existing EC2 KeyPair to enable SSH access to the instance
   * Constraint: `must be the name of an existing EC2 KeyPair.`
  * **SSHLocation** - The IP address range that can be used to SSH to the EC2 instances
   * Default: `0.0.0.0/0`
@@ -69,28 +69,18 @@ AWS CloudFormation Sample Template AutoScalingRollingUpdates: Create a load bala
   * `(u'us-west-1', {u'HVM64': u'ami-87ea13c3', u'HVMG2': u'ami-37827a73', u'PV64': u'ami-85ea13c1'})`
   * `(u'eu-central-1', {u'HVM64': u'ami-a6b0b7bb', u'HVMG2': u'ami-a6c9cfbb', u'PV64': u'ami-a4b0b7b9'})`
   * `(u'eu-west-1', {u'HVM64': u'ami-e4d18e93', u'HVMG2': u'ami-72a9f105', u'PV64': u'ami-d6d18ea1'})`
- * **Region2Examples**:
-  * `(u'us-east-1', {u'Examples': u'https://s3.amazonaws.com/cloudformation-examples-us-east-1'})`
-  * `(u'ap-northeast-1', {u'Examples': u'https://s3-ap-northeast-1.amazonaws.com/cloudformation-examples-ap-northeast-1'})`
-  * `(u'sa-east-1', {u'Examples': u'https://s3-sa-east-1.amazonaws.com/cloudformation-examples-sa-east-1'})`
-  * `(u'cn-north-1', {u'Examples': u'https://s3.cn-north-1.amazonaws.com.cn/cloudformation-examples-cn-north-1'})`
-  * `(u'ap-southeast-1', {u'Examples': u'https://s3-ap-southeast-1.amazonaws.com/cloudformation-examples-ap-southeast-1'})`
-  * `(u'ap-southeast-2', {u'Examples': u'https://s3-ap-southeast-2.amazonaws.com/cloudformation-examples-ap-southeast-2'})`
-  * `(u'us-west-2', {u'Examples': u'https://s3-us-west-2.amazonaws.com/cloudformation-examples-us-west-2'})`
-  * `(u'us-west-1', {u'Examples': u'https://s3-us-west-1.amazonaws.com/cloudformation-examples-us-west-1'})`
-  * `(u'eu-central-1', {u'Examples': u'https://s3-eu-central-1.amazonaws.com/cloudformation-examples-eu-central-1'})`
-  * `(u'eu-west-1', {u'Examples': u'https://s3-eu-west-1.amazonaws.com/cloudformation-examples-eu-west-1'})`
 
 
 ##Resources
- * **ElasticLoadBalancer** - `AWS::ElasticLoadBalancing::LoadBalancer`
+ * **EC2Instance** - `AWS::EC2::Instance`
  * **InstanceSecurityGroup** - `AWS::EC2::SecurityGroup`
- * **LaunchConfig** - `AWS::AutoScaling::LaunchConfiguration`
- * **WebServerGroup** - `AWS::AutoScaling::AutoScalingGroup`
 
 
 ##Outputs
- * **URL** - `{u'Fn::Join': [u'', [u'http://', {u'Fn::GetAtt': [u'ElasticLoadBalancer', u'DNSName']}]]}`
+ * **AZ** - `{u'Fn::GetAtt': [u'EC2Instance', u'AvailabilityZone']}`
+ * **InstanceId** - `{u'Ref': u'EC2Instance'}`
+ * **PublicDNS** - `{u'Fn::GetAtt': [u'EC2Instance', u'PublicDnsName']}`
+ * **PublicIP** - `{u'Fn::GetAtt': [u'EC2Instance', u'PublicIp']}`
 
 
-**Last Updated:** 2015-11-02 15:20:44.320117
+**Last Updated:** 2015-11-02 15:20:44.782183

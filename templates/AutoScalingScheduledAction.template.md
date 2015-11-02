@@ -95,4 +95,4 @@ AWS CloudFormation Sample Template AutoScalingScheduledAction: Create a load bal
  * **URL** - `{u'Fn::Join': [u'', [u'http://', {u'Fn::GetAtt': [u'ElasticLoadBalancer', u'DNSName']}]]}`
 
 
-**Last Updated:** 2015-11-02 15:04:09.633034
+**Last Updated:** 2015-11-02 15:20:44.161655

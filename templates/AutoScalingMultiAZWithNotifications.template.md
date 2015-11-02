@@ -100,4 +100,4 @@ AWS CloudFormation Sample Template AutoScalingMultiAZWithNotifications: Create a
  * **URL** - `{u'Fn::Join': [u'', [u'http://', {u'Fn::GetAtt': [u'ElasticLoadBalancer', u'DNSName']}]]}`
 
 
-**Last Updated:** 2015-11-02 15:04:09.475374
+**Last Updated:** 2015-11-02 15:20:44.008922
