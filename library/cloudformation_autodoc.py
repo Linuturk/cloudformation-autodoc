@@ -36,7 +36,7 @@ EXAMPLES = '''
 - cloudformation_autodoc: template=MyTemplate.template dest=OTHER.md
 
 # Append a timestamp to the outputted documentation
-- cloudformation_autodoc: template=MyTemplate.template dest=OTHER.md timestamp=yes
+- cloudformation_autodoc: template=MyTemplate.template timestamp=yes
 '''
 
 import datetime
@@ -130,7 +130,7 @@ def main():
 
     # Write the towrite list
     if secure_hash(dest) == secure_hash_s(''.join(towrite)):
-        msg = '{0} documentation at {1} already up to date.'.format(templ, dest)
+        msg = 'Documentation already up to date for {0}'.format(templ)
         module.exit_json(changed=False, written=msg)
     else:
         try:
