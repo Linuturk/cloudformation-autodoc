@@ -117,7 +117,7 @@
       "Properties" : {
         "ApplicationName" : { "Ref" : "SampleApplication" },
         "Description" : "Default Configuration Version 1.0",
-        "SolutionStackName" : "64bit Amazon Linux 2014.03 v1.0.9 running Tomcat 7 Java 7",
+        "SolutionStackName" : "64bit Amazon Linux 2015.03 v2.0.1 running Tomcat 7 Java 7",
         "OptionSettings" : [{
           "Namespace": "aws:elasticbeanstalk:application:environment",
           "OptionName": "JDBC_CONNECTION_STRING",
