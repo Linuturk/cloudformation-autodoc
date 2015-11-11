@@ -17,4 +17,3 @@ AWS CloudFormation Sample Template DynamoDB_Secondary_Indexes: Create a DynamoDB
  * **TableName** - `{u'Ref': u'TableOfBooks'}`
 
 
-**Last Updated:** 2015-11-02 15:20:44.629123

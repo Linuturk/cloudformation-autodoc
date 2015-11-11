@@ -48,4 +48,3 @@ AWS CloudFormation Sample Template ElasticBeanstalk_Simple: Configure and launch
  * **URL** - `{u'Fn::Join': [u'', [u'http://', {u'Fn::GetAtt': [u'SampleEnvironment', u'EndpointURL']}]]}`
 
 
-**Last Updated:** 2015-11-02 15:20:45.571266

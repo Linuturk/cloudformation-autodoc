@@ -58,17 +58,63 @@ AWS CloudFormation Sample Template AutoScalingRollingUpdates: Create a load bala
   * `(u'm1.xlarge', {u'Arch': u'PV64'})`
   * `(u'm2.4xlarge', {u'Arch': u'PV64'})`
   * `(u'm3.xlarge', {u'Arch': u'HVM64'})`
+ * **AWSInstanceType2NATArch**:
+  * `(u'd2.2xlarge', {u'Arch': u'NATHVM64'})`
+  * `(u'm3.large', {u'Arch': u'NATHVM64'})`
+  * `(u'r3.4xlarge', {u'Arch': u'NATHVM64'})`
+  * `(u'm1.small', {u'Arch': u'NATPV64'})`
+  * `(u'c1.medium', {u'Arch': u'NATPV64'})`
+  * `(u'm3.2xlarge', {u'Arch': u'NATHVM64'})`
+  * `(u't2.small', {u'Arch': u'NATHVM64'})`
+  * `(u'r3.2xlarge', {u'Arch': u'NATHVM64'})`
+  * `(u'c3.8xlarge', {u'Arch': u'NATHVM64'})`
+  * `(u'cr1.8xlarge', {u'Arch': u'NATHVM64'})`
+  * `(u'c3.large', {u'Arch': u'NATHVM64'})`
+  * `(u'c4.8xlarge', {u'Arch': u'NATHVM64'})`
+  * `(u't1.micro', {u'Arch': u'NATPV64'})`
+  * `(u'c3.xlarge', {u'Arch': u'NATHVM64'})`
+  * `(u'm1.large', {u'Arch': u'NATPV64'})`
+  * `(u'hs1.8xlarge', {u'Arch': u'NATHVM64'})`
+  * `(u'c3.2xlarge', {u'Arch': u'NATHVM64'})`
+  * `(u'c4.xlarge', {u'Arch': u'NATHVM64'})`
+  * `(u'c3.4xlarge', {u'Arch': u'NATHVM64'})`
+  * `(u't2.medium', {u'Arch': u'NATHVM64'})`
+  * `(u'hi1.4xlarge', {u'Arch': u'NATHVM64'})`
+  * `(u'i2.8xlarge', {u'Arch': u'NATHVM64'})`
+  * `(u'c1.xlarge', {u'Arch': u'NATPV64'})`
+  * `(u'd2.4xlarge', {u'Arch': u'NATHVM64'})`
+  * `(u'd2.8xlarge', {u'Arch': u'NATHVM64'})`
+  * `(u'c4.4xlarge', {u'Arch': u'NATHVM64'})`
+  * `(u't2.micro', {u'Arch': u'NATHVM64'})`
+  * `(u'm2.2xlarge', {u'Arch': u'NATPV64'})`
+  * `(u'g2.2xlarge', {u'Arch': u'NATHVMG2'})`
+  * `(u'r3.8xlarge', {u'Arch': u'NATHVM64'})`
+  * `(u'c4.2xlarge', {u'Arch': u'NATHVM64'})`
+  * `(u'm2.xlarge', {u'Arch': u'NATPV64'})`
+  * `(u'm1.medium', {u'Arch': u'NATPV64'})`
+  * `(u'd2.xlarge', {u'Arch': u'NATHVM64'})`
+  * `(u'r3.large', {u'Arch': u'NATHVM64'})`
+  * `(u'i2.xlarge', {u'Arch': u'NATHVM64'})`
+  * `(u'm3.medium', {u'Arch': u'NATHVM64'})`
+  * `(u'i2.4xlarge', {u'Arch': u'NATHVM64'})`
+  * `(u'r3.xlarge', {u'Arch': u'NATHVM64'})`
+  * `(u'c4.large', {u'Arch': u'NATHVM64'})`
+  * `(u'i2.2xlarge', {u'Arch': u'NATHVM64'})`
+  * `(u'cc2.8xlarge', {u'Arch': u'NATHVM64'})`
+  * `(u'm1.xlarge', {u'Arch': u'NATPV64'})`
+  * `(u'm2.4xlarge', {u'Arch': u'NATPV64'})`
+  * `(u'm3.xlarge', {u'Arch': u'NATHVM64'})`
  * **AWSRegionArch2AMI**:
-  * `(u'us-east-1', {u'HVM64': u'ami-0d4cfd66', u'HVMG2': u'ami-5b05ba30', u'PV64': u'ami-0f4cfd64'})`
-  * `(u'ap-northeast-1', {u'HVM64': u'ami-1c1b9f1c', u'HVMG2': u'ami-f644c4f6', u'PV64': u'ami-1a1b9f1a'})`
-  * `(u'sa-east-1', {u'HVM64': u'ami-55098148', u'HVMG2': u'NOT_SUPPORTED', u'PV64': u'ami-5b098146'})`
-  * `(u'cn-north-1', {u'HVM64': u'ami-bcc45885', u'HVMG2': u'NOT_SUPPORTED', u'PV64': u'ami-bec45887'})`
-  * `(u'ap-southeast-1', {u'HVM64': u'ami-d44b4286', u'HVMG2': u'ami-12b5bc40', u'PV64': u'ami-d24b4280'})`
-  * `(u'ap-southeast-2', {u'HVM64': u'ami-db7b39e1', u'HVMG2': u'ami-b3337e89', u'PV64': u'ami-ef7b39d5'})`
-  * `(u'us-west-2', {u'HVM64': u'ami-d5c5d1e5', u'HVMG2': u'ami-a9d6c099', u'PV64': u'ami-d3c5d1e3'})`
-  * `(u'us-west-1', {u'HVM64': u'ami-87ea13c3', u'HVMG2': u'ami-37827a73', u'PV64': u'ami-85ea13c1'})`
-  * `(u'eu-central-1', {u'HVM64': u'ami-a6b0b7bb', u'HVMG2': u'ami-a6c9cfbb', u'PV64': u'ami-a4b0b7b9'})`
-  * `(u'eu-west-1', {u'HVM64': u'ami-e4d18e93', u'HVMG2': u'ami-72a9f105', u'PV64': u'ami-d6d18ea1'})`
+  * `(u'us-east-1', {u'HVM64': u'ami-60b6c60a', u'HVMG2': u'ami-e998ea83', u'PV64': u'ami-5fb8c835'})`
+  * `(u'ap-northeast-1', {u'HVM64': u'ami-383c1956', u'HVMG2': u'ami-08e5c166', u'PV64': u'ami-393c1957'})`
+  * `(u'sa-east-1', {u'HVM64': u'ami-6817af04', u'HVMG2': u'NOT_SUPPORTED', u'PV64': u'ami-7d15ad11'})`
+  * `(u'cn-north-1', {u'HVM64': u'ami-43a36a2e', u'HVMG2': u'NOT_SUPPORTED', u'PV64': u'ami-18ac6575'})`
+  * `(u'ap-southeast-1', {u'HVM64': u'ami-c9b572aa', u'HVMG2': u'ami-5a15d239', u'PV64': u'ami-34bd7a57'})`
+  * `(u'ap-southeast-2', {u'HVM64': u'ami-48d38c2b', u'HVMG2': u'ami-0c1a446f', u'PV64': u'ami-ced887ad'})`
+  * `(u'us-west-2', {u'HVM64': u'ami-f0091d91', u'HVMG2': u'ami-315f4850', u'PV64': u'ami-d93622b8'})`
+  * `(u'us-west-1', {u'HVM64': u'ami-d5ea86b5', u'HVMG2': u'ami-943956f4', u'PV64': u'ami-56ea8636'})`
+  * `(u'eu-central-1', {u'HVM64': u'ami-bc5b48d0', u'HVMG2': u'ami-ba1a09d6', u'PV64': u'ami-794a5915'})`
+  * `(u'eu-west-1', {u'HVM64': u'ami-bff32ccc', u'HVMG2': u'ami-83fd23f0', u'PV64': u'ami-95e33ce6'})`
  * **Region2Examples**:
   * `(u'us-east-1', {u'Examples': u'https://s3.amazonaws.com/cloudformation-examples-us-east-1'})`
   * `(u'ap-northeast-1', {u'Examples': u'https://s3-ap-northeast-1.amazonaws.com/cloudformation-examples-ap-northeast-1'})`
@@ -93,4 +139,3 @@ AWS CloudFormation Sample Template AutoScalingRollingUpdates: Create a load bala
  * **URL** - `{u'Fn::Join': [u'', [u'http://', {u'Fn::GetAtt': [u'ElasticLoadBalancer', u'DNSName']}]]}`
 
 
-**Last Updated:** 2015-11-02 15:20:44.320117
