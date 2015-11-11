@@ -89,7 +89,7 @@
       "Properties" : {
         "ApplicationName" : { "Ref" : "SampleApplication" },
         "Description" : "SSH access to Node.JS Application",
-        "SolutionStackName" : "64bit Amazon Linux 2014.03 v1.0.9 running Node.js",
+        "SolutionStackName" : "64bit Amazon Linux 2015.03 v2.0.1 running Node.js",
         "OptionSettings" : [{
           "Namespace" : "aws:autoscaling:launchconfiguration",
           "OptionName" : "EC2KeyName",
