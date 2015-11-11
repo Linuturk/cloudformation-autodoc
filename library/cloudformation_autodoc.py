@@ -18,7 +18,14 @@ options:
     dest:
         required: false
         description:
-            - Set the path to the markdown file. (Default: README.md)
+            - Set the path to the markdown file.
+        default: "README.md"
+    timestamp:
+        required: false
+        description:
+            - Append a timestamp to the end of the documentation.
+        choices: [ "yes", "no" ]
+        default: "no"
 '''
 
 EXAMPLES = '''
@@ -27,6 +34,9 @@ EXAMPLES = '''
 
 # Override the markdown file name
 - cloudformation_autodoc: template=MyTemplate.template dest=OTHER.md
+
+# Append a timestamp to the outputted documentation
+- cloudformation_autodoc: template=MyTemplate.template dest=OTHER.md timestamp=yes
 '''
 
 import datetime
@@ -38,13 +48,15 @@ def main():
         argument_spec=dict(
             dest=dict(default='README.md'),
             template=dict(required=True),
-            name=dict(aliases=['template'])
+            name=dict(aliases=['template']),
+            timestamp=dict(default='no', choices=['yes', 'no'])
         ),
         supports_check_mode=False
     )
 
     templ = module.params['name']
     dest = module.params['dest']
+    timestamp = module.params['timestamp']
 
     # Open the template file
     try:
@@ -110,8 +122,9 @@ def main():
         towrite.append('\n')
 
     # Show when the file was last updated
-    time = str(datetime.datetime.now())
-    towrite.append('**Last Updated:** {0}'.format(time))
+    if timestamp == 'yes':
+        time = str(datetime.datetime.now())
+        towrite.append('**Last Updated:** {0}'.format(time))
 
     # Write the towrite list
     try:
