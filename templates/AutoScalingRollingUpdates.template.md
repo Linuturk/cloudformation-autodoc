@@ -10,7 +10,6 @@ AWS CloudFormation Sample Template AutoScalingRollingUpdates: Create a load bala
   * Default: `0.0.0.0/0`
   * Constraint: `must be a valid IP CIDR range of the form x.x.x.x/x.`
 
-
 ##Mappings
  * **AWSInstanceType2Arch**:
   * `(u'd2.2xlarge', {u'Arch': u'HVM64'})`
@@ -127,15 +126,12 @@ AWS CloudFormation Sample Template AutoScalingRollingUpdates: Create a load bala
   * `(u'eu-central-1', {u'Examples': u'https://s3-eu-central-1.amazonaws.com/cloudformation-examples-eu-central-1'})`
   * `(u'eu-west-1', {u'Examples': u'https://s3-eu-west-1.amazonaws.com/cloudformation-examples-eu-west-1'})`
 
-
 ##Resources
  * **ElasticLoadBalancer** - `AWS::ElasticLoadBalancing::LoadBalancer`
  * **InstanceSecurityGroup** - `AWS::EC2::SecurityGroup`
  * **LaunchConfig** - `AWS::AutoScaling::LaunchConfiguration`
  * **WebServerGroup** - `AWS::AutoScaling::AutoScalingGroup`
 
-
 ##Outputs
  * **URL** - `{u'Fn::Join': [u'', [u'http://', {u'Fn::GetAtt': [u'ElasticLoadBalancer', u'DNSName']}]]}`
-
 

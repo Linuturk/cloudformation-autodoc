@@ -10,7 +10,6 @@ AWS CloudFormation Sample Template AutoScalingScheduledAction: Create a load bal
   * Default: `0.0.0.0/0`
   * Constraint: `must be a valid IP CIDR range of the form x.x.x.x/x.`
 
-
 ##Mappings
  * **AWSInstanceType2Arch**:
   * `(u'd2.2xlarge', {u'Arch': u'HVM64'})`
@@ -127,7 +126,6 @@ AWS CloudFormation Sample Template AutoScalingScheduledAction: Create a load bal
   * `(u'eu-central-1', {u'Examples': u'https://s3-eu-central-1.amazonaws.com/cloudformation-examples-eu-central-1'})`
   * `(u'eu-west-1', {u'Examples': u'https://s3-eu-west-1.amazonaws.com/cloudformation-examples-eu-west-1'})`
 
-
 ##Resources
  * **ElasticLoadBalancer** - `AWS::ElasticLoadBalancing::LoadBalancer`
  * **InstanceSecurityGroup** - `AWS::EC2::SecurityGroup`
@@ -136,8 +134,6 @@ AWS CloudFormation Sample Template AutoScalingScheduledAction: Create a load bal
  * **ScheduledActionUp** - `AWS::AutoScaling::ScheduledAction`
  * **WebServerGroup** - `AWS::AutoScaling::AutoScalingGroup`
 
-
 ##Outputs
  * **URL** - `{u'Fn::Join': [u'', [u'http://', {u'Fn::GetAtt': [u'ElasticLoadBalancer', u'DNSName']}]]}`
-
 

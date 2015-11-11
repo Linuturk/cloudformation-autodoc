@@ -15,7 +15,6 @@ AWS CloudFormation Sample Template ElasticBeanstalk_in_VPC: Sample template show
   * Default: `0.0.0.0/0`
   * Constraint: `must be a valid CIDR range of the form x.x.x.x/x.`
 
-
 ##Mappings
  * **AWSInstanceType2Arch**:
   * `(u'd2.2xlarge', {u'Arch': u'HVM64'})`
@@ -147,7 +146,6 @@ AWS CloudFormation Sample Template ElasticBeanstalk_in_VPC: Sample template show
   * `(u'Public', {u'CIDR': u'10.0.0.0/24'})`
   * `(u'VPC', {u'CIDR': u'10.0.0.0/16'})`
 
-
 ##Resources
  * **BastionHost** - `AWS::EC2::Instance`
  * **BastionIPAddress** - `AWS::EC2::EIP`
@@ -185,9 +183,7 @@ AWS CloudFormation Sample Template ElasticBeanstalk_in_VPC: Sample template show
  * **WebServerRole** - `AWS::IAM::Role`
  * **WebServerRolePolicy** - `AWS::IAM::Policy`
 
-
 ##Outputs
  * **Bastion** - `{u'Ref': u'BastionIPAddress'}`
  * **URL** - `{u'Fn::Join': [u'', [u'http://', {u'Fn::GetAtt': [u'SampleEnvironment', u'EndpointURL']}]]}`
-
 

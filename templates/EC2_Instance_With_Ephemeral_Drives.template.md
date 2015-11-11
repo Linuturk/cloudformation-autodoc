@@ -10,7 +10,6 @@ AWS CloudFormation Sample Template EC2_Instance_With_Ephemeral_Drives: Example t
   * Default: `0.0.0.0/0`
   * Constraint: `must be a valid CIDR range of the form x.x.x.x/x.`
 
-
 ##Mappings
  * **AWSInstanceType2Arch**:
   * `(u'd2.2xlarge', {u'Arch': u'HVM64'})`
@@ -116,13 +115,10 @@ AWS CloudFormation Sample Template EC2_Instance_With_Ephemeral_Drives: Example t
   * `(u'eu-central-1', {u'HVM64': u'ami-bc5b48d0', u'HVMG2': u'ami-ba1a09d6', u'PV64': u'ami-794a5915'})`
   * `(u'eu-west-1', {u'HVM64': u'ami-bff32ccc', u'HVMG2': u'ami-83fd23f0', u'PV64': u'ami-95e33ce6'})`
 
-
 ##Resources
  * **EC2Instance** - `AWS::EC2::Instance`
  * **EC2SecurityGroup** - `AWS::EC2::SecurityGroup`
 
-
 ##Outputs
  * **Instance** - `{u'Fn::GetAtt': [u'EC2Instance', u'PublicDnsName']}`
-
 

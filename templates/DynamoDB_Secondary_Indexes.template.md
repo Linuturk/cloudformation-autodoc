@@ -8,12 +8,9 @@ AWS CloudFormation Sample Template DynamoDB_Secondary_Indexes: Create a DynamoDB
   * Default: `10`
   * Constraint: `must be between 5 and 10000`
 
-
 ##Resources
  * **TableOfBooks** - `AWS::DynamoDB::Table`
 
-
 ##Outputs
  * **TableName** - `{u'Ref': u'TableOfBooks'}`
-
 

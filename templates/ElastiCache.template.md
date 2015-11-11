@@ -16,7 +16,6 @@ AWS CloudFormation Sample Template ElastiCache: Sample template showing how to c
   * Default: `0.0.0.0/0`
   * Constraint: `must be a valid IP CIDR range of the form x.x.x.x/x.`
 
-
 ##Mappings
  * **AWSInstanceType2Arch**:
   * `(u'd2.2xlarge', {u'Arch': u'HVM64'})`
@@ -122,7 +121,6 @@ AWS CloudFormation Sample Template ElastiCache: Sample template showing how to c
   * `(u'eu-central-1', {u'HVM64': u'ami-bc5b48d0', u'HVMG2': u'ami-ba1a09d6', u'PV64': u'ami-794a5915'})`
   * `(u'eu-west-1', {u'HVM64': u'ami-bff32ccc', u'HVMG2': u'ami-83fd23f0', u'PV64': u'ami-95e33ce6'})`
 
-
 ##Resources
  * **CacheCluster** - `AWS::ElastiCache::CacheCluster`
  * **CacheSecurityGroup** - `AWS::ElastiCache::SecurityGroup`
@@ -130,8 +128,6 @@ AWS CloudFormation Sample Template ElastiCache: Sample template showing how to c
  * **WebServerInstance** - `AWS::EC2::Instance`
  * **WebServerSecurityGroup** - `AWS::EC2::SecurityGroup`
 
-
 ##Outputs
  * **WebsiteURL** - `{u'Fn::Join': [u'', [u'http://', {u'Fn::GetAtt': [u'WebServerInstance', u'PublicDnsName']}]]}`
-
 

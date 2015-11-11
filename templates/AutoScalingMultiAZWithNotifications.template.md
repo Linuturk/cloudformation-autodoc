@@ -12,7 +12,6 @@ AWS CloudFormation Sample Template AutoScalingMultiAZWithNotifications: Create a
   * Default: `0.0.0.0/0`
   * Constraint: `must be a valid IP CIDR range of the form x.x.x.x/x.`
 
-
 ##Mappings
  * **AWSInstanceType2Arch**:
   * `(u'd2.2xlarge', {u'Arch': u'HVM64'})`
@@ -129,7 +128,6 @@ AWS CloudFormation Sample Template AutoScalingMultiAZWithNotifications: Create a
   * `(u'eu-central-1', {u'Examples': u'https://s3-eu-central-1.amazonaws.com/cloudformation-examples-eu-central-1'})`
   * `(u'eu-west-1', {u'Examples': u'https://s3-eu-west-1.amazonaws.com/cloudformation-examples-eu-west-1'})`
 
-
 ##Resources
  * **CPUAlarmHigh** - `AWS::CloudWatch::Alarm`
  * **CPUAlarmLow** - `AWS::CloudWatch::Alarm`
@@ -141,8 +139,6 @@ AWS CloudFormation Sample Template AutoScalingMultiAZWithNotifications: Create a
  * **WebServerScaleDownPolicy** - `AWS::AutoScaling::ScalingPolicy`
  * **WebServerScaleUpPolicy** - `AWS::AutoScaling::ScalingPolicy`
 
-
 ##Outputs
  * **URL** - `{u'Fn::Join': [u'', [u'http://', {u'Fn::GetAtt': [u'ElasticLoadBalancer', u'DNSName']}]]}`
-
 

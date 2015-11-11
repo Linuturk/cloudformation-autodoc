@@ -8,11 +8,9 @@ AWS CloudFormation Sample Template ElasticBeanstalk_Simple: Configure and launch
  * **OperatorEMail** - EMail address to notify if there are any operational issues
   * Constraint: `must be a valid email address.`
 
-
 ##Conditions
  * **Is-EC2-Classic** - `{u'Fn::Not': [{u'Condition': u'Is-EC2-VPC'}]}`
  * **Is-EC2-VPC** - `{u'Fn::Or': [{u'Fn::Equals': [{u'Ref': u'AWS::Region'}, u'eu-central-1']}, {u'Fn::Equals': [{u'Ref': u'AWS::Region'}, u'cn-north-1']}]}`
-
 
 ##Mappings
  * **Region2Principal**:
@@ -26,7 +24,6 @@ AWS CloudFormation Sample Template ElasticBeanstalk_Simple: Configure and launch
   * `(u'us-west-1', {u'EC2Principal': u'ec2.amazonaws.com', u'OpsWorksPrincipal': u'opsworks.amazonaws.com'})`
   * `(u'cn-north-1', {u'EC2Principal': u'ec2.amazonaws.com.cn', u'OpsWorksPrincipal': u'opsworks.amazonaws.com.cn'})`
   * `(u'eu-west-1', {u'EC2Principal': u'ec2.amazonaws.com', u'OpsWorksPrincipal': u'opsworks.amazonaws.com'})`
-
 
 ##Resources
  * **AlarmTopic** - `AWS::SNS::Topic`
@@ -43,8 +40,6 @@ AWS CloudFormation Sample Template ElasticBeanstalk_Simple: Configure and launch
  * **WebServerRole** - `AWS::IAM::Role`
  * **WebServerRolePolicy** - `AWS::IAM::Policy`
 
-
 ##Outputs
  * **URL** - `{u'Fn::Join': [u'', [u'http://', {u'Fn::GetAtt': [u'SampleEnvironment', u'EndpointURL']}]]}`
-
 

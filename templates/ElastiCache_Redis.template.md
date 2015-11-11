@@ -13,7 +13,6 @@ AWS CloudFormation Sample Template ElastiCache_Redis: Sample template showing ho
   * Default: `0.0.0.0/0`
   * Constraint: `must be a valid IP CIDR range of the form x.x.x.x/x.`
 
-
 ##Mappings
  * **AWSInstanceType2Arch**:
   * `(u'd2.2xlarge', {u'Arch': u'HVM64'})`
@@ -130,7 +129,6 @@ AWS CloudFormation Sample Template ElastiCache_Redis: Sample template showing ho
   * `(u'cn-north-1', {u'EC2Principal': u'ec2.amazonaws.com.cn', u'OpsWorksPrincipal': u'opsworks.amazonaws.com.cn'})`
   * `(u'eu-west-1', {u'EC2Principal': u'ec2.amazonaws.com', u'OpsWorksPrincipal': u'opsworks.amazonaws.com'})`
 
-
 ##Resources
  * **RedisCluster** - `AWS::ElastiCache::CacheCluster`
  * **RedisClusterSecurityGroup** - `AWS::ElastiCache::SecurityGroup`
@@ -141,8 +139,6 @@ AWS CloudFormation Sample Template ElastiCache_Redis: Sample template showing ho
  * **WebServerRolePolicy** - `AWS::IAM::Policy`
  * **WebServerSecurityGroup** - `AWS::EC2::SecurityGroup`
 
-
 ##Outputs
  * **WebsiteURL** - `{u'Fn::Join': [u'', [u'http://', {u'Fn::GetAtt': [u'WebServerInstance', u'PublicDnsName']}]]}`
-
 

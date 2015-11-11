@@ -4,7 +4,6 @@ AWS CloudFormation Sample Template ElasticBeanstalk_Nodejs_Sample: Configure and
  * **KeyName** - Name of an existing EC2 KeyPair to enable SSH access to the AWS Elastic Beanstalk instance
   * Constraint: `must be the name of an existing EC2 KeyPair.`
 
-
 ##Mappings
  * **Region2Principal**:
   * `(u'us-east-1', {u'EC2Principal': u'ec2.amazonaws.com', u'OpsWorksPrincipal': u'opsworks.amazonaws.com'})`
@@ -18,7 +17,6 @@ AWS CloudFormation Sample Template ElasticBeanstalk_Nodejs_Sample: Configure and
   * `(u'cn-north-1', {u'EC2Principal': u'ec2.amazonaws.com.cn', u'OpsWorksPrincipal': u'opsworks.amazonaws.com.cn'})`
   * `(u'eu-west-1', {u'EC2Principal': u'ec2.amazonaws.com', u'OpsWorksPrincipal': u'opsworks.amazonaws.com'})`
 
-
 ##Resources
  * **SampleApplication** - `AWS::ElasticBeanstalk::Application`
  * **SampleApplicationVersion** - `AWS::ElasticBeanstalk::ApplicationVersion`
@@ -28,8 +26,6 @@ AWS CloudFormation Sample Template ElasticBeanstalk_Nodejs_Sample: Configure and
  * **WebServerRole** - `AWS::IAM::Role`
  * **WebServerRolePolicy** - `AWS::IAM::Policy`
 
-
 ##Outputs
  * **URL** - `{u'Fn::Join': [u'', [u'http://', {u'Fn::GetAtt': [u'SampleEnvironment', u'EndpointURL']}]]}`
-
 

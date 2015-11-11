@@ -13,12 +13,9 @@ AWS CloudFormation Sample Template DynamoDB_Table: This template demonstrates th
   * Default: `10`
   * Constraint: `must be between 5 and 10000`
 
-
 ##Resources
  * **myDynamoDBTable** - `AWS::DynamoDB::Table`
 
-
 ##Outputs
  * **TableName** - `{u'Ref': u'myDynamoDBTable'}`
-
 
