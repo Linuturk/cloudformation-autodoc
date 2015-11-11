@@ -41,6 +41,7 @@ EXAMPLES = '''
 
 import datetime
 import json
+from ansible.utils.hashing import secure_hash, secure_hash_s
 
 
 def main():
@@ -68,57 +69,58 @@ def main():
     towrite = []
     # Write out the Description
     if 'Description' in data:
-        towrite.append('##{0}'.format('Description'))
+        towrite.append('##{0}\n'.format('Description'))
         towrite.append(data['Description'])
+        towrite.append('\n')
 
     # Metadata section
     if 'Metadata' in data:
-        towrite.append('####{0}'.format('Metadata'))
+        towrite.append('####{0}\n'.format('Metadata'))
         for key, value in sorted(data['Metadata'].iteritems()):
-            towrite.append(' * **{0}**: {1}'.format(key, value))
+            towrite.append(' * **{0}**: {1}\n'.format(key, value))
         towrite.append('\n')
 
     # Generate the Parameters
     if 'Parameters' in data:
-        towrite.append('##{0}'.format('Parameters'))
+        towrite.append('##{0}\n'.format('Parameters'))
         for key, value in sorted(data['Parameters'].iteritems()):
-            towrite.append(' * **{0}** - {1}'.format(key,
+            towrite.append(' * **{0}** - {1}\n'.format(key,
                            value['Description']))
             if 'Default' in value:
-                towrite.append('  * Default: `{0}`'.format(value['Default']))
+                towrite.append('  * Default: `{0}`\n'.format(value['Default']))
             if 'ConstraintDescription' in value:
-                towrite.append('  * Constraint: `{0}`'.format(
+                towrite.append('  * Constraint: `{0}`\n'.format(
                                value['ConstraintDescription']))
     towrite.append('\n')
 
     # Generate any Conditions if they exist
     if 'Conditions' in data:
-        towrite.append('##{0}'.format('Conditions'))
+        towrite.append('##{0}\n'.format('Conditions'))
         for key, value in sorted(data['Conditions'].iteritems()):
-            towrite.append(' * **{0}** - `{1}`'.format(key, value))
+            towrite.append(' * **{0}** - `{1}`\n'.format(key, value))
         towrite.append('\n')
 
     # Generate any Mappings if they exist
     if 'Mappings' in data:
-        towrite.append('##{0}'.format('Mappings'))
+        towrite.append('##{0}\n'.format('Mappings'))
         for key, value in sorted(data['Mappings'].iteritems()):
-            towrite.append(' * **{0}**:'.format(key))
+            towrite.append(' * **{0}**:\n'.format(key))
             for key in value.iteritems():
-                towrite.append('  * `{0}`'.format(key))
+                towrite.append('  * `{0}`\n'.format(key))
         towrite.append('\n')
 
     # Generate a list of all Resources
     if 'Resources' in data:
-        towrite.append('##{0}'.format('Resources'))
+        towrite.append('##{0}\n'.format('Resources'))
         for key, value in sorted(data['Resources'].iteritems()):
-            towrite.append(' * **{0}** - `{1}`'.format(key, value['Type']))
+            towrite.append(' * **{0}** - `{1}`\n'.format(key, value['Type']))
         towrite.append('\n')
 
     # Generate the Outputs
     if 'Outputs' in data:
-        towrite.append('##{0}'.format('Outputs'))
+        towrite.append('##{0}\n'.format('Outputs'))
         for key, value in sorted(data['Outputs'].iteritems()):
-            towrite.append(' * **{0}** - `{1}`'.format(key, value['Value']))
+            towrite.append(' * **{0}** - `{1}`\n'.format(key, value['Value']))
         towrite.append('\n')
 
     # Show when the file was last updated
@@ -127,14 +129,18 @@ def main():
         towrite.append('**Last Updated:** {0}'.format(time))
 
     # Write the towrite list
-    try:
-        with open(dest, 'w') as destination:
-            for line in towrite:
-                destination.write('{0}\n'.format(line))
-        msg = '{0} documentation updated to {1}'.format(templ, dest)
-        module.exit_json(changed=True, written=msg)
-    except Exception as exc:
-        module.fail_json(msg=exc)
+    if secure_hash(dest) == secure_hash_s(''.join(towrite)):
+        msg = '{0} documentation at {1} already up to date.'.format(templ, dest)
+        module.exit_json(changed=False, written=msg)
+    else:
+        try:
+            with open(dest, 'w') as destination:
+                for line in towrite:
+                    destination.write(line)
+            msg = '{0} documentation updated to {1}'.format(templ, dest)
+            module.exit_json(changed=True, written=msg)
+        except Exception as exc:
+            module.fail_json(msg=exc)
 
 
 from ansible.module_utils.basic import *
