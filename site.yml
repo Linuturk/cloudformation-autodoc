@@ -8,5 +8,5 @@
       with_items: ExampleTemplates
 
     - name: Document Templates
-      cloudformation_autodoc: template=templates/{{ item }} dest=templates/{{ item }}.md
+      cloudformation_autodoc: template=templates/{{ item }} dest=templates/{{ item }}.md insert=templates/insert.md
       with_items: ExampleTemplates

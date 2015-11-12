@@ -1,5 +1,12 @@
 ##Description
 AWS CloudFormation Sample Template ElasticBeanstalk_in_VPC: Sample template showing how to create an Elastic Beanstalk environment in a VPC. The stack contains 2 subnets: the first subnet is public and contains the load balancer, a NAT device for internet access from the private subnet and a bastion host to allow SSH access to the Elastic Beanstalk hosts. The second subnet is private and contains the Elastic Beanstalk instances. You will be billed for the AWS resources used if you create a stack from this template.
+## Insert
+
+This is an insert into the automatically generated documentation.
+
+**Feel free to use Markdown!**
+
+Use this type of file to insert more details on a template that can't fit into the usual description. Feel free to use images to document the architecture your template deploys.
 ##Parameters
  * **BastionInstanceType** - Bastion Host EC2 instance type
   * Default: `m1.small`

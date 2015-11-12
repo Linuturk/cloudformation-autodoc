@@ -1,5 +1,12 @@
 ##Description
 AWS CloudFormation Sample Template ElasticBeanstalk_Simple: Configure and launch an AWS Elastic Beanstalk application that connects to an Amazon RDS database instance. Monitoring is setup on the database. **WARNING** This template creates one or more Amazon EC2 instances and an Amazon Relational Database Service database instance. You will be billed for the AWS resources used if you create a stack from this template.
+## Insert
+
+This is an insert into the automatically generated documentation.
+
+**Feel free to use Markdown!**
+
+Use this type of file to insert more details on a template that can't fit into the usual description. Feel free to use images to document the architecture your template deploys.
 ##Parameters
  * **DBPassword** - Test database admin account password
   * Constraint: `must contain only alphanumeric characters.`

@@ -1,5 +1,12 @@
 ##Description
 AWS CloudFormation Sample Template ElasticBeanstalk_Nodejs_Sample: Configure and launch the AWS Elastic Beanstalk sample application. **WARNING** This template creates one or more Amazon EC2 instances. You will be billed for the AWS resources used if you create a stack from this template.
+## Insert
+
+This is an insert into the automatically generated documentation.
+
+**Feel free to use Markdown!**
+
+Use this type of file to insert more details on a template that can't fit into the usual description. Feel free to use images to document the architecture your template deploys.
 ##Parameters
  * **KeyName** - Name of an existing EC2 KeyPair to enable SSH access to the AWS Elastic Beanstalk instance
   * Constraint: `must be the name of an existing EC2 KeyPair.`

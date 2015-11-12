@@ -1,5 +1,12 @@
 ##Description
 AWS CloudFormation Sample Template AutoScalingMultiAZWithNotifications: Create a multi-az, load balanced and Auto Scaled sample web site running on an Apache Web Serever. The application is configured to span all Availability Zones in the region and is Auto-Scaled based on the CPU utilization of the web servers. Notifications will be sent to the operator email address on scaling events. The instances are load balanced with a simple health check against the default web page. **WARNING** This template creates one or more Amazon EC2 instances and an Elastic Load Balancer. You will be billed for the AWS resources used if you create a stack from this template.
+## Insert
+
+This is an insert into the automatically generated documentation.
+
+**Feel free to use Markdown!**
+
+Use this type of file to insert more details on a template that can't fit into the usual description. Feel free to use images to document the architecture your template deploys.
 ##Parameters
  * **InstanceType** - WebServer EC2 instance type
   * Default: `m1.small`

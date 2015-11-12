@@ -26,6 +26,10 @@ options:
             - Append a timestamp to the end of the documentation.
         choices: [ "yes", "no" ]
         default: "no"
+    insert:
+        required: false
+        description:
+            - Insert a markdown file into the generated documentation.
 '''
 
 EXAMPLES = '''
@@ -37,6 +41,9 @@ EXAMPLES = '''
 
 # Append a timestamp to the outputted documentation
 - cloudformation_autodoc: template=MyTemplate.template timestamp=yes
+
+# Insert the specified file into the final document
+- cloudformation_autodoc: template=MyTemplate.template insert=insert.md
 '''
 
 import datetime
@@ -50,7 +57,8 @@ def main():
             dest=dict(default='README.md'),
             template=dict(required=True),
             name=dict(aliases=['template']),
-            timestamp=dict(default='no', choices=['yes', 'no'])
+            timestamp=dict(default='no', choices=['yes', 'no']),
+            insert=dict(default=False)
         ),
         supports_check_mode=False
     )
@@ -58,6 +66,7 @@ def main():
     templ = module.params['name']
     dest = module.params['dest']
     timestamp = module.params['timestamp']
+    insert = module.params['insert']
 
     # Open the template file
     try:
@@ -72,6 +81,15 @@ def main():
         towrite.append('##{0}\n'.format('Description'))
         towrite.append(data['Description'])
         towrite.append('\n')
+
+    # Insert the insert
+    if insert:
+        try:
+            with open(insert) as insertf:
+                for line in insertf:
+                    towrite.append(line)
+        except Exception as exc:
+            module.fail_json(msg=exc)
 
     # Metadata section
     if 'Metadata' in data:
