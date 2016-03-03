@@ -1,4 +1,11 @@
 test:
   override:
-    - flake8 --ignore=F403 library/*
-    - ansible-playbook site.yml -v
+    - flake8 .
+    - ansible-playbook ansible/site.yml -e prefix='ansible/'
+    - cfautodoc -h
+    - python setup.py sdist bdist_wheel
+deployment:
+  master:
+    branch: master
+    commands:
+      - twine upload -u $TWINEUSER -p $TWINEPASS dist/*

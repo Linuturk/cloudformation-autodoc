@@ -1,0 +1,34 @@
+#!/usr/bin/env python
+
+
+import argparse
+from cfautodoc.autodoc import autodoc
+
+parser = argparse.ArgumentParser(
+    description='Document CloudFormation templates in Markdown.')
+parser.add_argument(
+    'template',
+    type=str,
+    help='the JSON template to document')
+parser.add_argument(
+    '--output',
+    type=str,
+    default='stdout',
+    help='Output the Markdown')
+parser.add_argument(
+    '--timestamp',
+    type=bool,
+    default=False,
+    help='Add a timestamp to the end of the output.')
+parser.add_argument(
+    '--insert',
+    type=str,
+    default=False,
+    help='Block of Markdown to insert into the output.')
+
+args = parser.parse_args()
+print(autodoc(
+    args.template,
+    args.output,
+    args.timestamp,
+    args.insert))
