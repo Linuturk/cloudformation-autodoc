@@ -1,7 +1,4 @@
 test:
   override:
-    - flake8 *.py
-    - flake8 cfautodoc/*.py
-    - flake8 ansible/library/*.py
-    - flake8 bin/cfautodoc
+    - flake8 .
     - ansible-playbook ansible/site.yml -e prefix='ansible/'

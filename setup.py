@@ -7,7 +7,7 @@ def readme():
 
 setup(name='cfautodoc',
       version='0.1',
-      description='Tool to automatically document CloudFormation templates in Markdown.',
+      description='Tool to document CloudFormation templates in Markdown.',
       long_description=readme(),
       url='http://github.com/linuturk/cloudformation-autodoc',
       author='Justin Phelps',
