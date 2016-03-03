@@ -1,5 +1,9 @@
 #!/usr/bin/python
 
+from ansible.module_utils.basic import *  # noqa
+from ansible.utils.hashing import secure_hash, secure_hash_s
+
+
 DOCUMENTATION = '''
 ---
 module: cloudformation_autodoc
@@ -45,9 +49,6 @@ EXAMPLES = '''
 # Insert the specified file into the final document
 - cloudformation_autodoc: template=MyTemplate.template insert=insert.md
 '''
-
-from ansible.module_utils.basic import *  # noqa
-from ansible.utils.hashing import secure_hash, secure_hash_s
 
 
 def main():
