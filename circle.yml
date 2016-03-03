@@ -2,3 +2,4 @@ test:
   override:
     - flake8 .
     - ansible-playbook ansible/site.yml -e prefix='ansible/'
+    - cfautodoc -h
