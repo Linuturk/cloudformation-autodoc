@@ -20,6 +20,7 @@ setup(name='cfautodoc',
       author_email='linuturk@onitato.com',
       license='MIT',
       packages=['cfautodoc'],
+      package_data={'cfautodoc': ['README.md']},
       scripts=['bin/cfautodoc'],
       install_requires=[
           'argparse',
