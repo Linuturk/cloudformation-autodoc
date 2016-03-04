@@ -3,7 +3,7 @@ test:
     - flake8 .
     - ansible-playbook ansible/site.yml -e prefix='ansible/'
     - cfautodoc -h
-    - python setup.py sdist bdist_wheel
+    - python setup.py sdist
 deployment:
   master:
     branch: master
