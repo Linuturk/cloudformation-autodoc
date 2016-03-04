@@ -10,7 +10,7 @@ def readme():
         return f.read()
 
 setup(name='cfautodoc',
-      version='0.1.1',
+      version='0.1.2',
       description='Tool to document CloudFormation templates in Markdown.',
       long_description=readme(),
       url='http://github.com/linuturk/cloudformation-autodoc',
